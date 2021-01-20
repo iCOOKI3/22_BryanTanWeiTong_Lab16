@@ -23,6 +23,9 @@ public class EnemyScript : MonoBehaviour
         {
             Destroy(gameObject);
             Destroy(collision.gameObject);
+
+            GameManagerController.instance.iScore++;
+            GameManagerController.instance.ScoreGO.GetComponent<Text>().text = "Score: " + GameManagerController.instance.iScore;
         }
     }
 }
